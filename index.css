@@ -1,0 +1,25 @@
+.header{
+    display:flex ;
+    justify-content: space-between;
+    margin:10px;
+    border:1px solid black ;
+}
+
+.name{
+    padding-left: 20px;
+    display:flex ;
+    margin-left: 35px;
+}
+.food{
+
+    padding-right: 15px;
+}
+
+.nav-items>ul{
+    list-style-type: none;
+    display:flex;
+}
+.nav-items>ul>li{
+display:flex;
+ padding:10px ;
+}

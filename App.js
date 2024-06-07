@@ -1,36 +1,75 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-//React element
-const Heading=()=>(
-    <h1 id="title" key="h2">
-        Namaste React
+import { IoFastFood } from "react-icons/io5";
+const Title = ()=>(
+    <h1 id="title" className="name" key="h2">
+    <div className="food"><IoFastFood /></div>
+        Food villa
     </h1>
 )
+
+//funxtional components
+// const Heading=()=>(
+//     <h1 id="title" key="h2">
+//         Namaste React
+//     </h1>
+// )
 
  
     
 //React  component
-const HeaderComponent = () => 
+const Header = () => 
     {
         return (
-            <div>
-             <Heading/>   {/*component composition (component inside the component ) */}
-                  <h1>functional component </h1>
-                  <h1>functional component </h1>
+            <div className="header">
+               <Title/>
+             <div className="nav-items">
+             <ul >
+                <li style={{fontSize:"23px"}}>Home</li>
+                <li style={{fontSize:"23px"}}>About</li>
+                <li style={{fontSize:"23px"}}>Contact</li>
+                <li style={{fontSize:"23px"}}>Cart</li>
+                
+             </ul>
+             </div>
             </div>
           
         )
     }
+
+    const RestrauntCard = ()=>{
+        
+    }
+   
+    
+    const Body = () => {
+      return (
+        <h4>App</h4>
+      )
+    }
+    const Footer = () => {
+        return (
+          <h4>App</h4>
+        )
+      }
+
+    
+  
 //without return statement even we can write that 
-const HeaderComponent2 = ()=>(
-    <div>
-        <h1>Namaste react functional component</h1>
-        <h2>This is a h2 tag</h2>
-    </div>
-)
+const AppLayout = () => {
+    return(
+        <React.Fragment>
+        <Header/>
+        <Body/>
+        <Footer/>
+        </React.Fragment>
+       
+     
+        
+    )
+}
  
 
     const root=ReactDOM.createRoot(document.getElementById("root"));
-    root.render(<HeaderComponent/>);
+    root.render(<AppLayout/>);
