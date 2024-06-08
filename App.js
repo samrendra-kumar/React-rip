@@ -2,6 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { IoFastFood } from "react-icons/io5";
+import { IoStarSharp } from "react-icons/io5";
 const Title = ()=>(
     <h1 id="title" className="name" key="h2">
     <div className="food"><IoFastFood /></div>
@@ -38,14 +39,55 @@ const Header = () =>
         )
     }
 
-    const RestrauntCard = ()=>{
-        
+    const RestrauntCard = ({src,named,time,dishes,rating})=>{
+      const truncateName = (named) => {
+         if(named.length > 15) {
+          return named.substring(0, 15) + "...";
+        }
+        return named;
+      };
+      
+        return(
+          
+          <div className="card">
+            <div className="foodImage">
+            <img src={src}
+            ></img>
+            </div>
+           <div className="specifications">
+           <h2>{truncateName(named)}</h2>
+            <h3><IoStarSharp />{rating} {time}</h3>
+            
+            <h4>{dishes}</h4>
+           </div>
+            
+          </div>
+         
+        )
     }
    
     
     const Body = () => {
       return (
-        <h4>App</h4>
+        <div className="container">
+         <RestrauntCard src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/b4817ea5bb972089f419c6f14e5a0bdd"
+        named="Burger-king" rating="4.1" time="35-40min"  dishes="Chinese,AsianmTibetan,Desserts"/>
+
+        <RestrauntCard src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/2b4f62d606d1b2bfba9ba9e5386fabb7"
+        named="Pizza Hut" rating="4.3" time="20-25 mins" dishes="Pizzas"/>
+        
+        <RestrauntCard src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ubypvyevkrogfvj1ygio"
+        named="UBQ by Barbeque Nation" rating="4" time="30-35 mins" dishes="North Indian,Barbecue,Biryani"/>
+
+       <RestrauntCard src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/xxh8c7ggvlhlzlx3oyv4"
+        named="Barbeque Nation" rating="4" time="30-35 mins" dishes="North Indian,Barbecue,Biryani"/>
+
+        
+       <RestrauntCard src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/xxh8c7ggvlhlzlx3oyv4"
+        named="Barbeque Nation" rating="4" time="30-35 mins" dishes="North Indian,Barbecue,Biryani"/>
+
+        </div>
+       
       )
     }
     const Footer = () => {
